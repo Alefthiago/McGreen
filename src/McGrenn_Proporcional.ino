@@ -52,15 +52,16 @@ void loop()
   // VALOR IDEAL PARA ERRO ALGO ENTRE -300 ate 300;
   if (output >= -300 && output <= 300)
   {
+    //  FAIXA POSITIVA 
     motorDireito = 255;
     motorEsquerdo = 255;
   }
   else
   {
+    // FAIXA NEGATIVA
     motorDireito = 150 + output;
     motorEsquerdo = 150 - output;
   }
-  // Adicione qualquer lógica necessária para a faixa negativa, se necessário
 
   // Garante que as velocidades estejam no intervalo permitido (0 a 255)
   motorDireito = constrain(motorDireito, 0, 255);
