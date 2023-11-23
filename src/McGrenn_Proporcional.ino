@@ -4,6 +4,10 @@
 #define dir1 8  // Pino_Direção do 1º Motor: Para frente / Para trás (HIGH ou LOW)_ porta IN1 ponte H;
 #define dir2 10 // Pino_Direção do 2º Motor: Para frente / Para trás (HIGH ou LOW)_ porta IN3 ponte H;
 
+//referentes ao led traseiro 
+// int ledVermelhoEsquerdo = numeroDaInterface;
+// int ledVermelhoDireito = numeroDaInterface2;
+
 // Definição dos pinos dos sensores
 #define pin_S1 2
 #define pin_S2 3
@@ -25,6 +29,10 @@ void setup()
   pinMode(M2, OUTPUT);
   pinMode(dir1, OUTPUT);
   pinMode(dir2, OUTPUT);
+
+//Definindo como saída dos leds traseiros
+  // pinMode(led1, OUTPUT);
+  // pinMode(led2, OUTPUT);
 
   // Setamos a direção inicial do motor como 0, isso fará com que ambos os motores girem para frente
   digitalWrite(dir1, LOW);
@@ -61,6 +69,10 @@ void loop()
     // FAIXA NEGATIVA
     motorDireito = 150 + output;
     motorEsquerdo = 150 - output;
+
+    // sobre os leds traseiros
+    // digitalWrite = (ledVermelhoEsquerdo, HIGH);
+    // digitalWrite = (ledVermelhoDireto, HIGH);
   }
 
   // Garante que as velocidades estejam no intervalo permitido (0 a 255)
